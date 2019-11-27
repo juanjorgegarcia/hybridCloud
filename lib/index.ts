@@ -766,11 +766,10 @@ const scaling = async () => {
   };
 
   await deleteImage(ImageName);
-
-  await deleteLoadBalancer(loadBalancerName);
-  await deleteTargetGroup(targetGroupName);
   await deleteListener(loadBalancerName);
   await deleteAutoScalingGroup(AutoScalingGroupName);
+  await deleteTargetGroup(targetGroupName);
+  await deleteLoadBalancer(loadBalancerName);
   await deleteLaunchConfiguration(LaunchConfigurationName);
   await deleteKeyPairOhio(keyPair);
   await deleteSecurityGroup(securityGroupParams);
