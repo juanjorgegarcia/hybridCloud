@@ -20,7 +20,7 @@ Then, inside the directory, hybridCloud run `npm install`
 Export your AWS credentials with `export AWS_ACCESS_KEY_ID="EXAMPLE_AWS_ACCESS_KEY_ID"
 export AWS_SECRET_ACCESS_KEY="EXAMPLE_AWS_SECRET_ACCESS_KEY"
 `
-Finally run `npm run prod`
+Finally run `npm run dev`or`npm run prod`
 ## References
 
 ___
