@@ -751,11 +751,9 @@ const setupToOhio = async (
 const scaling = async () => {
   await ec2.deleteKeyPair({ KeyName: keyPair.KeyName }).promise();
   await delInstancesOhio();
-  await deleteSecurityGroupOhio(privateGatewaySecGroupParams);
-  await deleteSecurityGroupOhio(privateDbSecGroupParams);
+
   await delInstances();
-  await deleteSecurityGroup(toOhioSecGroupParams);
-  await deleteSecurityGroup(securityGroupWebServerParams);
+
   const loadBalancerName = "Project-Webserver-LoadBalancer";
   const targetGroupName = "Project-Webservers-TargetGroup";
   const AutoScalingGroupName = "Project-Webserver-AutoScaling";
@@ -776,6 +774,10 @@ const scaling = async () => {
   await deleteAutoScalingGroup(AutoScalingGroupName);
   await deleteLaunchConfiguration(LaunchConfigurationName);
   await deleteKeyPairOhio(keyPair);
+  await deleteSecurityGroup(toOhioSecGroupParams);
+  await deleteSecurityGroup(securityGroupWebServerParams);
+  await deleteSecurityGroupOhio(privateGatewaySecGroupParams);
+  await deleteSecurityGroupOhio(privateDbSecGroupParams);
 
   await importKeyPair(keyPair);
   await importKeyPairOhio(keyPair);
