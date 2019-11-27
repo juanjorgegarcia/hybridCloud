@@ -768,12 +768,12 @@ const scaling = async () => {
   await deleteImage(ImageName);
 
   await deleteLoadBalancer(loadBalancerName);
-  await deleteSecurityGroup(securityGroupParams);
   await deleteTargetGroup(targetGroupName);
   await deleteListener(loadBalancerName);
   await deleteAutoScalingGroup(AutoScalingGroupName);
   await deleteLaunchConfiguration(LaunchConfigurationName);
   await deleteKeyPairOhio(keyPair);
+  await deleteSecurityGroup(securityGroupParams);
   await deleteSecurityGroup(toOhioSecGroupParams);
   await deleteSecurityGroup(securityGroupWebServerParams);
   await deleteSecurityGroupOhio(privateGatewaySecGroupParams);
